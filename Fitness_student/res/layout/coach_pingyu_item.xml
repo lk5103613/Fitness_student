@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户评语"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.like.customview.RoundImageView
+                android:id="@+id/header_icon"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/face_02" />
+
+            <TextView
+                android:id="@+id/nick_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="2dip"
+                android:layout_weight="1"
+                android:text="annettahjj"
+                android:textColor="#646464"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dip"
+                android:text="2015-06-21"
+                android:textColor="#aeaeae"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:text="在小区门口健身房，很大，环境又好非常美。重点是里面很多教练都很帅气，很美～"
+            android:textColor="@android:color/black"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/icon_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip" >
+
+            <ImageView
+                android:id="@+id/icon_0"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginRight="5dip"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:src="@drawable/icon_10" />
+
+            <ImageView
+                android:id="@+id/icon_1"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginRight="5dip"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:src="@drawable/icon_11" />
+
+            <ImageView
+                android:id="@+id/icon_2"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginRight="5dip"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:src="@drawable/icon_12" />
+
+            <ImageView
+                android:id="@+id/icon_3"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginRight="5dip"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:src="@drawable/icon_12" />
+
+            <ImageView
+                android:id="@+id/icon_4"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginRight="5dip"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:src="@drawable/icon_13" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

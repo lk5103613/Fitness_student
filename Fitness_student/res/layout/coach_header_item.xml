@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dip"
+        android:background="#f4f4f4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <TextView
+            android:id="@+id/coach_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名：ala"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginLeft="10dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/xx" />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginLeft="2dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/xx" />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginLeft="2dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/xx" />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginLeft="2dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/xx" />
+
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginLeft="2dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/xx" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="位置"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/place"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:background="#f9f9f9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/coach_skill"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="技能"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/jineng1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#f9f9f9" />
+
+        <TextView
+            android:id="@+id/jineng2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#f9f9f9" />
+
+        <TextView
+            android:id="@+id/jineng3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#f9f9f9" />
+
+        <TextView
+            android:id="@+id/jineng4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#f9f9f9" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shaixuan_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90000000"
+    android:paddingBottom="40dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:visibility="gone" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/corner_bg" >
+
+        <TextView
+            android:id="@+id/shaixuan_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0F0F0"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="筛选"
+            android:textColor="#979798" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shaixuan_title"
+            android:layout_marginLeft="10dp"
+            android:text="根据热度排序" />
+    </RelativeLayout>
+
+</RelativeLayout>

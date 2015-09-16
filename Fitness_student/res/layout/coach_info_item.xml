@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="10dip" 
+    android:background="#ffffff">
+
+    <com.like.customview.RoundImageView
+        android:id="@+id/header"
+        android:layout_width="60dip"
+        android:layout_height="60dip" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/coach_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="程雅洁"
+                android:textColor="#555555"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="距离：500米"
+                android:textColor="#c9c9c9"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dip"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:scaleType="fitXY"
+                android:src="@drawable/xx" />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:layout_marginLeft="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/xx" />
+
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:layout_marginLeft="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/xx" />
+
+            <ImageView
+                android:id="@+id/star4"
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:layout_marginLeft="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/xx" />
+
+            <ImageView
+                android:id="@+id/star5"
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:layout_marginLeft="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/xx" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/good_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dip"
+            android:text="拉丁舞、足球、羽毛球"
+            android:textColor="#555555"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评分："
+                android:textColor="#555555"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/coach_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.7分"
+                android:textColor="#fc0000"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
