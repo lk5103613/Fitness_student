@@ -1,20 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">学员端</string>
 
+    <string name="app_name">学员端</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_coach_detail">CoachDetailActivity</string>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_map">MapActivity</string>
-
-
     <string name="pull_to_refresh_pull_label">下拉刷新…</string>
     <string name="pull_to_refresh_release_label">放开以刷新…</string>
     <string name="pull_to_refresh_refreshing_label">正在载入…</string>
-
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
     <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_reg">RegActivity</string>
+    <string name="title_activity_index">IndexActivity</string>
 
 </resources>

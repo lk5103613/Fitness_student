@@ -44,7 +44,6 @@ import android.widget.TextView;
 
 import com.like.fitness.student.R;
 
-
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 	public interface IconTabProvider {
@@ -83,7 +82,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	private boolean textAllCaps = true;
 
 	private int scrollOffset = 52;
-	private int indicatorHeight = 8;
+	private int indicatorHeight = 4;
 	private int underlineHeight = 2;
 	private int dividerPadding = 12;
 	private int tabPadding = 24;
@@ -95,12 +94,13 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	private Typeface tabTypeface = null;
 	private int tabTypefaceStyle = Typeface.BOLD;
 
-	
 	private int lastScrollX = 0;
 
 	private int tabBackgroundResId = R.drawable.background_tab;
 
 	private Locale locale;
+
+	private int indicatorPadding = 0;
 
 	public PagerSlidingTabStrip(Context context) {
 		this(context, null);
@@ -320,7 +320,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 				tab.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTextSize);
 				tab.setTypeface(tabTypeface, tabTypefaceStyle);
 				tab.setTextColor(tabTextColor);
-				if(tabTextStateColor != null) {
+				if (tabTextStateColor != null) {
 					tab.setTextColor(tabTextStateColor);
 				}
 
@@ -369,32 +369,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 		final int height = getHeight();
 
-		// draw indicator line
-
-		rectPaint.setColor(indicatorColor);
-
-		// default: line below current tab
-		View currentTab = tabsContainer.getChildAt(currentPosition);
-		float lineLeft = currentTab.getLeft();
-		float lineRight = currentTab.getRight();
-
-		// if there is an offset, start interpolating left and right coordinates
-		// between current and next tab
-		if (currentPositionOffset > 0f && currentPosition < tabCount - 1) {
-
-			View nextTab = tabsContainer.getChildAt(currentPosition + 1);
-			final float nextTabLeft = nextTab.getLeft();
-			final float nextTabRight = nextTab.getRight();
-
-			lineLeft = (currentPositionOffset * nextTabLeft + (1f - currentPositionOffset)
-					* lineLeft);
-			lineRight = (currentPositionOffset * nextTabRight + (1f - currentPositionOffset)
-					* lineRight);
-		}
-
-		canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height,
-				rectPaint);
-
 		// draw underline
 
 		rectPaint.setColor(underlineColor);
@@ -409,6 +383,32 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 			canvas.drawLine(tab.getRight(), dividerPadding, tab.getRight(),
 					height - dividerPadding, dividerPaint);
 		}
+
+		// draw indicator line
+
+		rectPaint.setColor(indicatorColor);
+
+		// default: line below current tab
+		View currentTab = tabsContainer.getChildAt(currentPosition);
+		float lineLeft = currentTab.getLeft() + indicatorPadding;
+		float lineRight = currentTab.getRight() - indicatorPadding;
+
+		// if there is an offset, start interpolating left and right coordinates
+		// between current and next tab
+		if (currentPositionOffset > 0f && currentPosition < tabCount - 1) {
+
+			View nextTab = tabsContainer.getChildAt(currentPosition + 1);
+			final float nextTabLeft = nextTab.getLeft() + indicatorPadding;
+			final float nextTabRight = nextTab.getRight() - indicatorPadding;
+
+			lineLeft = (currentPositionOffset * nextTabLeft + (1f - currentPositionOffset)
+					* lineLeft);
+			lineRight = (currentPositionOffset * nextTabRight + (1f - currentPositionOffset)
+					* lineRight);
+		}
+
+		canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height,
+				rectPaint);
 	}
 
 	private class PageListener implements OnPageChangeListener {
@@ -567,7 +567,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		this.tabTextColor = getResources().getColor(resId);
 		updateTabStyles();
 	}
-	
+
 	public void setTextColorStateResource(int resId) {
 		this.tabTextStateColor = getResources().getColorStateList(resId);
 		updateTabStyles();
@@ -598,6 +598,10 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 	public int getTabPaddingLeftRight() {
 		return tabPadding;
+	}
+
+	public void setIndicatorPadding(int padding) {
+		this.indicatorPadding = padding;
 	}
 
 	@Override
