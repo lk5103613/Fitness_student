@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Response.Listener;
+import com.like.entity.LoginResult;
+import com.like.network.GsonUtil;
 import com.like.utils.DeviceUtil;
 import com.like.utils.ValidateUtil;
 
@@ -43,11 +45,12 @@ public class LoginActivity extends BaseActivity {
 		mDataFetcher.fetchLogin(phone, pwd, imei, new Listener<String>() {
 			@Override
 			public void onResponse(String response) {
-				System.out.println(response);
-//				CommonResult result = GsonUtil.gson.fromJson(response, CommonResult.class);
-//				if(result.code == 1) {
-//					Toast.makeText(mContext, "登陆成功", Toast.LENGTH_SHORT).show();
-//				}
+				LoginResult result = GsonUtil.gson.fromJson(response, LoginResult.class);
+				if(result.code == 1) {
+					Toast.makeText(mContext, "登陆成功", Toast.LENGTH_SHORT).show();
+				} else {
+					Toast.makeText(mContext, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+				}
 			}
 		}, mErrorListener);
 	}
