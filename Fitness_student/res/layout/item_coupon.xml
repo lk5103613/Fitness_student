@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--
+         <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image_couponyellow"
+        android:adjustViewBounds="true" />
+    -->
+
+    <LinearLayout
+        android:id="@id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/image_couponyellow"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin_b5"
+        android:paddingTop="@dimen/margin" >
+
+        <TextView
+            android:id="@id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="健身50元优惠券 "
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_b1" />
+
+        <TextView
+            android:id="@id/textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有效期至：2015.08.08-2015.09.08"
+            android:textColor="#565050"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@id/textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="362348832472902387"
+            android:textColor="#565050"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+</RelativeLayout>

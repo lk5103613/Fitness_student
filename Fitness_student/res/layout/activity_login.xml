@@ -151,7 +151,7 @@
            android:layout_marginTop="10dp"
            android:padding="10dp"
            android:text="新用户注册"
-           android:onClick="registered"
+           android:onClick="toReg"
            android:background="@drawable/btn_grey_selector" />
        
        <Button 

@@ -1,19 +1,18 @@
 package com.like.fitness.student;
 
-import com.like.customview.BarViewPager;
-import com.like.customview.SelectLinearLayout;
-import com.like.fragments.IndexFragment;
-import com.like.fragments.MyInfoFragment;
-import com.like.fragments.ShaiXuanFragment;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.like.customview.BarViewPager;
+import com.like.customview.SelectLinearLayout;
+import com.like.fragments.IndexFragment;
+import com.like.fragments.MyInfoFragment;
+import com.like.fragments.ShaiXuanFragment;
 
 public class IndexActivity extends FragmentActivity implements OnClickListener {
 

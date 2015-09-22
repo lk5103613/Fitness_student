@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@drawable/xmlbg_recharge"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/margin"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="可提现金额："
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="110元"
+                    android:textColor="#FF7674"
+                    android:textSize="@dimen/text_size_b1" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#BCBCBC"
+                android:layout_marginLeft="@dimen/margin_b5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/margin"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="金额（元）："
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b1" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请输入提现金额"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:text="提现至您最近用于支付宝或者微信帐号"
+            android:textColor="#878787"
+            android:textSize="@dimen/text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@drawable/xmlbtn_redtobrightred"
+            android:gravity="center"
+            android:padding="@dimen/margin"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_b1" />
+    </LinearLayout>
+
+</LinearLayout>

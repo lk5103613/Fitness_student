@@ -1,0 +1,41 @@
+1.登录：   /index.php/AppUser/login
+           入参:
+               mp:手机号
+               pwd:密码
+               imei:推送使用的设备号
+           出参:
+              uid:用户ID
+              nickname：昵称
+             等等
+             
+             
+2.注册   /index.php/AppUser/reg
+     入参:    
+          nickname:  昵称
+          mp:手机号
+          pwd:密码
+          
+      出参:
+      code:1  注册成功   其他值失败
+               uid:用户ID
+              
+ 3.我的：/index.php/AppUser/loadUserInfo
+            入参:    uid
+            
+           出参:
+               nickname:
+               all_tran_money:已消费金额
+               
+           
+     
+4 我的课程:/index.php/AppI/orderPage
+      入参:
+           uid:用户ID
+           status:   0:未付款    1:未消费   7:已取消
+           page:当前页面
+      
+    
+             
+             
+             
+               

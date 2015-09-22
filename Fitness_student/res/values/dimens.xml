@@ -71,4 +71,10 @@
 
     <dimen name="toolbar_height">46dp</dimen>
     <dimen name="toolbar_text_size">18sp</dimen>
+    
+    <!-- 图标相关 -->
+    <dimen name="icon_size_bigger">35dp</dimen>
+    <dimen name="icon_size_big">30dp</dimen>
+    <dimen name="icon_size">25dp</dimen>
+    <dimen name="icon_size_small">20dp</dimen>
 </resources>
