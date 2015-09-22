@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.android.volley.Request;
 import com.android.volley.Request.Method;
@@ -16,6 +17,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
@@ -24,13 +26,16 @@ public class DataFetcher {
 
 	private Context mApplicationContext;
 	private RequestQueue mQueue;
+	private ImageLoader mImgLoader;
 
 	private static DataFetcher mFetcher;
+	
 
 	private DataFetcher(Context applicationContext) {
 		this.mApplicationContext = applicationContext;
 		mQueue = MyNetworkUtil.getInstance(mApplicationContext)
 				.getRequestQueue();
+		mImgLoader = MyNetworkUtil.getInstance(mApplicationContext).getImageLoader();
 	}
 
 	public static DataFetcher getInstance(Context applicationContext) {
@@ -49,6 +54,10 @@ public class DataFetcher {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public void loadImg(String url ,ImageView img, int defaultImgResId, int errorImgResId) {
+		mImgLoader.get(url, ImageLoader.getImageListener(img, defaultImgResId, errorImgResId));
 	}
 
 	public void fetchCoachList(String url, Map<String, String> params,
@@ -144,11 +153,15 @@ public class DataFetcher {
 	}
 	
 	public void fetchReg(String nickName, String mp, String pwd, String imei, String avatar, Listener<String> listener, ErrorListener errorListener) {
-		String testUrl = UrlParamGenerator.getPath(APIS.REG, nickName, mp, pwd, imei, avatar);
-		System.out.println("url   " + testUrl);
 		Map<String, String> params = UrlParamGenerator.getMapParams(APIS.REG, nickName, mp, pwd, imei, avatar);
 		String url = UrlParamGenerator.getBasePath(APIS.REG);
 		MyRequest request = new MyRequest(Method.POST, url, params, listener, errorListener);
+		mQueue.add(request);
+	}
+	
+	public void fetchMyInfo(String uid, Listener<String> listener, ErrorListener errorListener) {
+		String url = UrlParamGenerator.getPath(APIS.GET_MY_INFO, uid);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
 		mQueue.add(request);
 	}
 

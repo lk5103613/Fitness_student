@@ -5,92 +5,20 @@
     android:background="@android:color/white"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dip"
-        android:background="#ff7674"
-        android:orientation="horizontal" >
-
-        <LinearLayout
-            android:layout_width="60dip"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:onClick="toMap"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:paddingRight="3dip"
-                android:text="上海"
-                android:textColor="@android:color/white"
-                android:textSize="13sp" />
-
-            <ImageView
-                android:layout_width="13dip"
-                android:layout_height="5dip"
-                android:scaleType="fitXY"
-                android:src="@drawable/icon_001" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:orientation="horizontal" >
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="8dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_marginTop="8dip"
-                android:background="@drawable/search"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="10dip"
-                android:paddingRight="10dip" >
-
-                <ImageView
-                    android:layout_width="15dip"
-                    android:layout_height="15dip"
-                    android:layout_marginRight="10dip"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/sousuo" />
-
-                <EditText
-                    android:id="@+id/txt_search_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:hint="搜索"
-                    android:imeOptions="actionSearch"
-                    android:inputType="text"
-                    android:singleLine="true"
-                    android:textSize="13sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="45dip"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:text="分享"
-            android:textColor="@android:color/white"
-            android:textSize="13sp" />
-    </LinearLayout>
+   
 
     <!-- 中间内容 -->
 
-    <com.like.customview.BarViewPager
+    <!-- <com.like.customview.BarViewPager
         android:id="@+id/index_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1" /> -->
+    <LinearLayout
+        android:id="@+id/index_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         android:layout_weight="1" />
     <!-- 中间内容 end -->
 

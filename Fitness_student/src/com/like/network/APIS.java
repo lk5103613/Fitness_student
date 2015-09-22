@@ -14,4 +14,6 @@ public class APIS {
     public final static String UPLOAD = BASE_URL + "/yw_uploadify.php";
     public static final String SEND_CODE = "http://222.73.117.158/msg/HttpBatchSendSM?account=vip_lb_dcjd&pswd=vip_lb_dcjd001&mobile=%1&msg=%2&needstatus=true"; 
     
+    public static final String GET_MY_INFO = BASE_URL + "/index.php/AppUser/loadUserInfo?uid=%1";
+    
 }

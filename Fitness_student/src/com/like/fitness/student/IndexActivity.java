@@ -1,12 +1,13 @@
 package com.like.fitness.student;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 
 import com.like.customview.BarViewPager;
 import com.like.customview.SelectLinearLayout;
@@ -14,19 +15,20 @@ import com.like.fragments.IndexFragment;
 import com.like.fragments.MyInfoFragment;
 import com.like.fragments.ShaiXuanFragment;
 
-public class IndexActivity extends FragmentActivity implements OnClickListener {
+public class IndexActivity extends BaseActivity implements OnClickListener {
 
 	private SelectLinearLayout mIndex;
 	private SelectLinearLayout mShaiXuan;
 	private SelectLinearLayout mMyInfo;
 	
-	private BarViewPager mPagerContainer;
+//	private BarViewPager mPagerContainer;
+	private LinearLayout mPagerContainer;
 	
 	private Fragment[] mFragments;
 	private SelectLinearLayout[] mtabs;
 	
 	private FragmentManager mFManager;
-	private int currentIndex = -1;
+	private int mCurrentIndex = -1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,8 @@ public class IndexActivity extends FragmentActivity implements OnClickListener {
 		mShaiXuan = (SelectLinearLayout) findViewById(R.id.shaixuan);
 		mMyInfo = (SelectLinearLayout) findViewById(R.id.myinfo);
 
-		mPagerContainer = (BarViewPager) findViewById(R.id.index_pager);
+//		mPagerContainer = (BarViewPager) findViewById(R.id.index_pager);
+		mPagerContainer = (LinearLayout) findViewById(R.id.index_pager);
 		
 		mFragments = new Fragment[]{new IndexFragment(), new ShaiXuanFragment(), new MyInfoFragment()};
 		mtabs = new SelectLinearLayout[]{mIndex, mShaiXuan, mMyInfo};
@@ -59,11 +62,9 @@ public class IndexActivity extends FragmentActivity implements OnClickListener {
 		case R.id.shaixuan:
 			changeTab(1);
 			break;
-
 		case R.id.myinfo:
 			changeTab(2);
 			break;
-
 		default:
 			break;
 		}
@@ -71,23 +72,18 @@ public class IndexActivity extends FragmentActivity implements OnClickListener {
 	}
 	
 	private void changeTab(int to) {
-		if (to != currentIndex) {
+		if (to != mCurrentIndex) {
 			FragmentTransaction transaction = mFManager.beginTransaction();
-			
-			if (!mFragments[to].isAdded()) {
+		if (!mFragments[to].isAdded()) {
 				transaction.add(R.id.index_pager, mFragments[to]);
 			}
-			
 			transaction.show(mFragments[to]);
-
-			if (currentIndex != -1) {
-				transaction.hide(mFragments[currentIndex]);
-				mtabs[currentIndex].setSelected(false);
+			if (mCurrentIndex != -1) {
+				transaction.hide(mFragments[mCurrentIndex]);
+				mtabs[mCurrentIndex].setSelected(false);
 			}
-			
 			mtabs[to].setSelected(true);
-
-			currentIndex = to;
+			mCurrentIndex = to;
 			transaction.commit();
 		}
 	}

@@ -44,10 +44,19 @@ public class LoginActivity extends BaseActivity {
 		String imei = DeviceUtil.getIMEI(mContext);
 		mDataFetcher.fetchLogin(phone, pwd, imei, new Listener<String>() {
 			@Override
-			public void onResponse(String response) {
+			public void onResponse(final String response) {
 				LoginResult result = GsonUtil.gson.fromJson(response, LoginResult.class);
 				if(result.code == 1) {
 					Toast.makeText(mContext, "登陆成功", Toast.LENGTH_SHORT).show();
+					new Thread(new Runnable() {
+						@Override
+						public void run() {
+							mLoginSharef.edit().putString(LOGIN_USER, response).commit();
+						}
+					}).start();
+					LoginActivity.this.finish();
+					Intent intent = new Intent(mContext, IndexActivity.class);
+					startActivity(intent);
 				} else {
 					Toast.makeText(mContext, "用户名或密码错误", Toast.LENGTH_SHORT).show();
 				}
