@@ -1,0 +1,9 @@
+<resources>
+
+    <dimen name="qty_view_size_b2">26dp</dimen>
+    <dimen name="qty_view_size_b1">22dp</dimen>
+    <dimen name="qty_view_size">18dp</dimen>
+    
+    <dimen name="qty_textsize">8sp</dimen>
+    
+</resources>
