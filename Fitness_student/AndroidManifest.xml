@@ -66,6 +66,10 @@
             android:name="com.like.fitness.student.IndexActivity"
             android:label="@string/title_activity_index" >
         </activity>
+        <activity
+            android:name="com.like.fitness.student.MyCourseActivity"
+            android:label="@string/title_activity_index" >
+        </activity>
     </application>
 
 </manifest>

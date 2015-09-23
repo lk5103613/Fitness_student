@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <ListView
-        android:id="@id/listview1"
+    <com.like.customview.pulltorefresh.PullToRefreshListView
+        android:id="@+id/unpay_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:cacheColorHint="#00000000"

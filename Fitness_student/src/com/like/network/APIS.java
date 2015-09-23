@@ -16,4 +16,6 @@ public class APIS {
     
     public static final String GET_MY_INFO = BASE_URL + "/index.php/AppUser/loadUserInfo?uid=%1";
     
+    public static final String GET_MY_COURSE = BASE_URL + "/index.php/AppI/orderPage?uid=%1&status=%2";
+    
 }

@@ -1,15 +1,18 @@
 package com.like.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.volley.Response.Listener;
 import com.like.customview.RoundImageView;
 import com.like.entity.LoginResult;
+import com.like.fitness.student.MyCourseActivity;
 import com.like.fitness.student.R;
 import com.like.network.APIS;
 import com.like.network.GsonUtil;
@@ -20,6 +23,8 @@ public class MyInfoFragment extends BaseFragment {
 	private TextView mLblNickname;
 	private TextView mLblAllTranCnt;
 	private TextView mLblAllTranMoney;
+	
+	private ViewGroup mBtnMyCourse;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +41,14 @@ public class MyInfoFragment extends BaseFragment {
 		mLblNickname = (TextView) view.findViewById(R.id.nick_name);
 		mLblAllTranCnt = (TextView) view.findViewById(R.id.all_tran_cnt);
 		mLblAllTranMoney = (TextView) view.findViewById(R.id.all_tran_money);
+		mBtnMyCourse = (ViewGroup) view.findViewById(R.id.my_course);
+		mBtnMyCourse.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(mContext, MyCourseActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	private void initUserInfo() {

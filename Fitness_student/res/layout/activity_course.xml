@@ -4,32 +4,58 @@
     android:background="#FFFFFF"
     android:orientation="vertical" >
 
-    <include layout="@layout/view_title" />
+    <RelativeLayout 
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/primary_red_color">
+        
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:orientation="vertical">
+            
+        </LinearLayout>
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/toolbar_text_size"
+            android:text="登陆"/>
+        
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <com.john.guo.laowangproject.views.TitleNavigate
+        <!-- <com.john.guo.laowangproject.views.TitleNavigate
             android:id="@+id/indicator"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" /> -->
+
+        <com.like.customview.PagerSlidingTabStrip
+            android:id="@+id/order_tap"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#DBDBDB" />
-        
+
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin"
             android:background="#F4F4F4" />
 
-        <FrameLayout
-            android:id="@+id/content"
+        <com.like.customview.BarViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        
     </LinearLayout>
 
 </LinearLayout>

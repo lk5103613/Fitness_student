@@ -164,5 +164,12 @@ public class DataFetcher {
 		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
 		mQueue.add(request);
 	}
+	
+	public void fetchMyCourse(String uid, String status, Listener<String> listener, ErrorListener errorListener) {
+		Map<String, String> params = UrlParamGenerator.getMapParams(APIS.GET_MY_COURSE, uid, status);
+		String url = UrlParamGenerator.getBasePath(APIS.GET_MY_COURSE);
+		MyRequest request = new MyRequest(Method.POST, url, params, listener, errorListener);
+		mQueue.add(request);
+	}
 
 }
