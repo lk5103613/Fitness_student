@@ -54,6 +54,7 @@
                 android:textSize="@dimen/text_size_b1" />
 
             <EditText
+                android:id="@+id/money"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -71,6 +72,7 @@
             android:textSize="@dimen/text_size" />
 
         <Button
+            android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
@@ -81,7 +83,8 @@
             android:padding="@dimen/margin"
             android:text="下一步"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_b1" />
+            android:textSize="@dimen/text_size_b1"
+            android:onClick="nextStep" />
     </LinearLayout>
 
 </LinearLayout>

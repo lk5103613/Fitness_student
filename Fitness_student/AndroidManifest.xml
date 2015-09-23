@@ -87,6 +87,10 @@
             android:name=".RechargeActivity"
             android:label="@string/title_activity_recharge" >
         </activity>
+        <activity
+            android:name=".WithdrawActivity"
+            android:label="@string/title_activity_withdraw" >
+        </activity>
     </application>
 
 </manifest>
