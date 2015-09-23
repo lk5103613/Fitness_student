@@ -38,7 +38,7 @@ public class CoachDetailActivity extends FragmentActivity implements SurfaceHold
         mPagerTab = (PagerSlidingTabStrip) findViewById(R.id.page_sliding_tab);
         mDetailPager = (ViewPager) findViewById(R.id.coach_detail_view_pager);
         mTop = (ViewGroup) findViewById(R.id.top);
-        mDetailPager.setOffscreenPageLimit(2);//防止被销�?
+        mDetailPager.setOffscreenPageLimit(2);//防止被销�?
         mPlayIcon = (ImageView) findViewById(R.id.play_icon);
         mSurface = (SurfaceView) findViewById(R.id.surface_view);
         initVideo();
@@ -73,10 +73,10 @@ public class CoachDetailActivity extends FragmentActivity implements SurfaceHold
     private void initVideo() {
         mHolder = mSurface.getHolder();
         mHolder.addCallback(this);
-        //为了可以播放视频或�?使用Camera预览，我们需要指定其Buffer类型
+        //为了可以播放视频或�?使用Camera预览，我们需要指定其Buffer类型
         mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         mPlayer = new MediaPlayer();
-        //然后指定�?��播放文件的路径，初始化MediaPlayer
+        //然后指定�?��播放文件的路径，初始化MediaPlayer
         String dataPath = "http://resource.ising.migu.cn/GA/M01/02/FD/ChmFZVV8XKKAfELCAK4VVjBHGyk841.mp4";
         try {
             mPlayer.setDataSource(dataPath);
@@ -103,4 +103,5 @@ public class CoachDetailActivity extends FragmentActivity implements SurfaceHold
     public void back(View v) {
         this.finish();
     }
+    
 }

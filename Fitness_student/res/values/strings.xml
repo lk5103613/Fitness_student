@@ -21,5 +21,6 @@
     <string name="title_activity_my_setting">MySettingActivity</string>
     <string name="title_activity_recharge">RechargeActivity</string>
     <string name="title_activity_withdraw">WithdrawActivity</string>
+    <string name="title_activity_course_detail">CourseDetailActivity</string>
 
 </resources>
