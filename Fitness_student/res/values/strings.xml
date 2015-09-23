@@ -16,5 +16,6 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_reg">RegActivity</string>
     <string name="title_activity_index">IndexActivity</string>
+    <string name="title_activity_my_coupon">MyCouponActivity</string>
 
 </resources>

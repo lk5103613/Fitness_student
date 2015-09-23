@@ -32,15 +32,15 @@
             android:value="zdTsVXD12ugOevGmbenGTx9z" />
 
         <activity
-            android:name="com.like.fitness.student.CoachListActivity"
+            android:name=".CoachListActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.like.fitness.student.CoachDetailActivity"
+            android:name=".CoachDetailActivity"
             android:label="@string/title_activity_coach_detail" >
         </activity>
         <activity
-            android:name="com.like.fitness.student.MapActivity"
+            android:name=".MapActivity"
             android:label="@string/title_activity_map" >
         </activity>
 
@@ -51,24 +51,29 @@
         </service>
 
         <activity
-            android:name="com.like.fitness.student.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+           
         </activity>
         <activity
-            android:name="com.like.fitness.student.RegActivity"
+            android:name=".RegActivity"
             android:label="@string/title_activity_reg" >
         </activity>
         <activity
-            android:name="com.like.fitness.student.IndexActivity"
+            android:name=".IndexActivity"
             android:label="@string/title_activity_index" >
         </activity>
         <activity
-            android:name="com.like.fitness.student.MyCourseActivity"
+            android:name=".MyCourseActivity"
             android:label="@string/title_activity_index" >
+        </activity>
+        <activity
+            android:name=".MyCouponActivity"
+            android:label="@string/title_activity_my_coupon" >
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
