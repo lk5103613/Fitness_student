@@ -80,7 +80,7 @@ public class CourseListAdapter extends BaseAdapter {
 		public TextView sCourseName;
 		public TextView sCourseCnt;
 		public TextView sTime;
-		public Button sBtnPay;
+		public TextView sBtnPay;
 		public ImageView sGender;
 		
 		public ViewHolder(View convertView) {

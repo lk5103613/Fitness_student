@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.like.adapter.CoursePyListAdapter;
@@ -26,6 +27,7 @@ public class CourseDetailActivity extends BaseActivity {
 	private TextView mMaxCount;
 	private TextView mAddress;
 	private RadioButton mTypeMore;
+	private ScrollView mScroller;
 	
 	private ListView mPingYuList;
 	private CoursePyListAdapter mAdapter;
@@ -47,11 +49,13 @@ public class CourseDetailActivity extends BaseActivity {
 		mAddress = (TextView) findViewById(R.id.address);
 		mTypeMore = (RadioButton) findViewById(R.id.type_more);
 		mPingYuList = (ListView) findViewById(R.id.pingyu_listview);
+		mScroller = (ScrollView) findViewById(R.id.scrollview);
 
 		initData();
 		mAdapter = new CoursePyListAdapter(this, mComments);
 		mPingYuList.setAdapter(mAdapter);
 		DisplayUtil.getInstance(this).setListViewHeightBasedOnChildren(this, mPingYuList);
+		mScroller.smoothScrollTo(0, 0);
 	}
 
 	private void initData() {
@@ -67,7 +71,6 @@ public class CourseDetailActivity extends BaseActivity {
 	 * @param view
 	 */
 	public void share(View view) {
-		System.out.println("share");
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View popView = layoutInflater.inflate(R.layout.share_pop, null);
 

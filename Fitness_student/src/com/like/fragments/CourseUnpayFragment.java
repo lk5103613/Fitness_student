@@ -2,10 +2,13 @@ package com.like.fragments;
 
 import java.lang.reflect.Type;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.android.volley.Response.Listener;
@@ -16,6 +19,7 @@ import com.like.customview.pulltorefresh.PullToRefreshBase.OnRefreshListener;
 import com.like.customview.pulltorefresh.PullToRefreshListView;
 import com.like.entity.Course;
 import com.like.entity.ListResult;
+import com.like.fitness.student.CourseDetailActivity;
 import com.like.fitness.student.R;
 import com.like.network.GsonUtil;
 
@@ -41,6 +45,14 @@ public class CourseUnpayFragment extends BaseFragment {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
 				updateList();
+			}
+		});
+		mList.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long arg3) {
+				Intent intent = new Intent(mContext, CourseDetailActivity.class);
+				startActivity(intent);
 			}
 		});
 	}

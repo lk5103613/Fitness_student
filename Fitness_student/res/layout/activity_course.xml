@@ -37,11 +37,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <!-- <com.john.guo.laowangproject.views.TitleNavigate
-            android:id="@+id/indicator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" /> -->
-
         <com.like.customview.PagerSlidingTabStrip
             android:id="@+id/order_tap"
             android:layout_width="match_parent"
