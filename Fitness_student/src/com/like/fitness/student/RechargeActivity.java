@@ -1,11 +1,10 @@
 package com.like.fitness.student;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class RechargeActivity extends Activity {
+public class RechargeActivity extends BaseActivity {
 	private EditText mMoney;
 
 	@Override
@@ -23,12 +22,5 @@ public class RechargeActivity extends Activity {
 		
 	}
 
-	/**
-	 * 返回按钮
-	 * 
-	 * @param v
-	 */
-	private void back(View v) {
-		
-	}
+	
 }
