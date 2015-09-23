@@ -17,5 +17,8 @@
     <string name="title_activity_reg">RegActivity</string>
     <string name="title_activity_index">IndexActivity</string>
     <string name="title_activity_my_coupon">MyCouponActivity</string>
+    <string name="title_activity_confirm_order">ConfirmOrderActivity</string>
+    <string name="title_activity_my_setting">MySettingActivity</string>
+    <string name="title_activity_recharge">RechargeActivity</string>
 
 </resources>

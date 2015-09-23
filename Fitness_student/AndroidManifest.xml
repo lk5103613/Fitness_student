@@ -38,6 +38,11 @@
         <activity
             android:name=".CoachDetailActivity"
             android:label="@string/title_activity_coach_detail" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MapActivity"
@@ -53,7 +58,6 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
-           
         </activity>
         <activity
             android:name=".RegActivity"
@@ -70,10 +74,18 @@
         <activity
             android:name=".MyCouponActivity"
             android:label="@string/title_activity_my_coupon" >
-             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConfirmOrderActivity"
+            android:label="@string/title_activity_confirm_order" >
+        </activity>
+        <activity
+            android:name=".MySettingActivity"
+            android:label="@string/title_activity_my_setting" >
+        </activity>
+        <activity
+            android:name=".RechargeActivity"
+            android:label="@string/title_activity_recharge" >
         </activity>
     </application>
 

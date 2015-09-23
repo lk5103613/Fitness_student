@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import com.like.adapter.MyCouponListAdapter;
@@ -34,5 +35,11 @@ public class MyCouponActivity extends Activity {
 		mAdapter.notifyDataSetChanged();
 	}
 
-	
+	/**
+	 * 回退按钮点击事件
+	 * @param v
+	 */
+	public void back(View v) {
+		finish();
+	}
 }

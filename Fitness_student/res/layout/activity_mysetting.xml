@@ -4,7 +4,34 @@
     android:background="#F4F4F4"
     android:orientation="vertical" >
 
-    <include layout="@layout/view_title" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#ff7674" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="我的设置"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_tv_text_size" />
+
+        <LinearLayout
+            android:layout_width="40dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="back"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/title_icon_width"
+                android:layout_height="@dimen/title_icon_width"
+                android:src="@drawable/arrow_global_back" />
+        </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,6 +40,8 @@
         android:orientation="vertical" >
 
         <RelativeLayout
+            android:id="@+id/email"
+            android:onClick="setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
@@ -46,6 +75,8 @@
             android:background="#E4E4E4" />
 
         <RelativeLayout
+            android:id="@+id/pwd"
+            android:onClick="setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
@@ -79,6 +110,8 @@
             android:background="#E4E4E4" />
 
         <RelativeLayout
+            android:id="@+id/weixin"
+            android:onClick="setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
@@ -112,6 +145,8 @@
             android:background="#E4E4E4" />
 
         <RelativeLayout
+            android:id="@+id/weibo"
+            android:onClick="setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
@@ -145,6 +180,8 @@
             android:background="#E4E4E4" />
 
         <RelativeLayout
+            android:id="@+id/phone"
+            android:onClick="setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin"
