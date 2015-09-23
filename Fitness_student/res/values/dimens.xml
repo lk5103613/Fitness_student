@@ -59,6 +59,7 @@
     <dimen name="margin_b5">20dp</dimen>
     <dimen name="margin_b6">30dp</dimen>
     <dimen name="margin_b7">40dp</dimen>
+    <dimen name="margin_b8">50dp</dimen>
 
     <!-- 分割线相关 -->
     <dimen name="ver_linewidth">1dp</dimen>
