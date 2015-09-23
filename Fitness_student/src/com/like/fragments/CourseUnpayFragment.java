@@ -51,12 +51,8 @@ public class CourseUnpayFragment extends BaseFragment {
 			public void onResponse(String response) {
 				Type type = new TypeToken<ListResult<Course>>(){}.getType();
 				ListResult<Course> courseResult = GsonUtil.gson.fromJson(response, type);
-				if(mAdapter == null) {
-					mAdapter = new CourseListAdapter(mContext, courseResult.list);
-					mList.setAdapter(mAdapter);
-				} else {
-					mAdapter.update(courseResult.list);
-				}
+				mAdapter = new CourseListAdapter(mContext, courseResult.list);
+				mList.setAdapter(mAdapter);
 				if(mList.isRefreshing())
 					mList.onRefreshComplete();
 			}}, mErrorListener);

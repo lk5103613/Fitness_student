@@ -12,19 +12,20 @@ import android.widget.TextView;
 import com.android.volley.Response.Listener;
 import com.like.customview.RoundImageView;
 import com.like.entity.LoginResult;
+import com.like.fitness.student.MyCouponActivity;
 import com.like.fitness.student.MyCourseActivity;
 import com.like.fitness.student.R;
 import com.like.network.APIS;
 import com.like.network.GsonUtil;
 
-public class MyInfoFragment extends BaseFragment {
+public class MyInfoFragment extends BaseFragment implements OnClickListener {
 	
 	private RoundImageView mHeadIcon;
 	private TextView mLblNickname;
 	private TextView mLblAllTranCnt;
 	private TextView mLblAllTranMoney;
-	
 	private ViewGroup mBtnMyCourse;
+	private ViewGroup mBtnCoupon;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,13 +43,9 @@ public class MyInfoFragment extends BaseFragment {
 		mLblAllTranCnt = (TextView) view.findViewById(R.id.all_tran_cnt);
 		mLblAllTranMoney = (TextView) view.findViewById(R.id.all_tran_money);
 		mBtnMyCourse = (ViewGroup) view.findViewById(R.id.my_course);
-		mBtnMyCourse.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(mContext, MyCourseActivity.class);
-				startActivity(intent);
-			}
-		});
+		mBtnCoupon = (ViewGroup) view.findViewById(R.id.btn_coupon);
+		mBtnMyCourse.setOnClickListener(this);
+		mBtnCoupon.setOnClickListener(this);
 	}
 
 	private void initUserInfo() {
@@ -70,5 +67,21 @@ public class MyInfoFragment extends BaseFragment {
 				mDataFetcher.loadImg(APIS.BASE_URL + result.avatar, mHeadIcon, R.drawable.icon_01, R.drawable.icon_01);
 			}
 		}, mErrorListener);
+	}
+
+	@Override
+	public void onClick(View v) {
+		Intent intent = null;
+		switch (v.getId()) {
+		case R.id.my_course:
+			intent = new Intent(mContext, MyCourseActivity.class);
+			break;
+		case R.id.btn_coupon:
+			intent = new Intent(mContext, MyCouponActivity.class);
+			break;
+		default:
+			return;
+		}
+		startActivity(intent);
 	}
 }

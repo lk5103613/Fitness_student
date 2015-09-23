@@ -3,15 +3,14 @@ package com.like.fitness.student;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
 
+import com.android.volley.Response.Listener;
 import com.like.adapter.MyCouponListAdapter;
 import com.like.entity.Coupon;
 
-public class MyCouponActivity extends Activity {
+public class MyCouponActivity extends BaseActivity {
 	
 	private ListView mCouponListView;
 	private MyCouponListAdapter mAdapter;
@@ -25,6 +24,16 @@ public class MyCouponActivity extends Activity {
 		mAdapter = new MyCouponListAdapter(this, mCoupons);
 		mCouponListView.setAdapter(mAdapter);
 		initData();
+		updateList();
+	}
+	
+	private void updateList() {
+		mDataFetcher.fetchMyCoupon(mLoginUser.uid, new Listener<String>() {
+			@Override
+			public void onResponse(String response) {
+				System.out.println(response);
+			}
+		}, mErrorListener);
 	}
 	
 	private void initData(){
@@ -35,11 +44,4 @@ public class MyCouponActivity extends Activity {
 		mAdapter.notifyDataSetChanged();
 	}
 
-	/**
-	 * 回退按钮点击事件
-	 * @param v
-	 */
-	public void back(View v) {
-		finish();
-	}
 }
