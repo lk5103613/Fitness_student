@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.android.volley.Response.Listener;
 import com.like.customview.RoundImageView;
 import com.like.entity.LoginResult;
+import com.like.fitness.student.MyCollectActivity;
 import com.like.fitness.student.MyCouponActivity;
 import com.like.fitness.student.MyCourseActivity;
 import com.like.fitness.student.R;
@@ -26,6 +27,7 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 	private TextView mLblAllTranMoney;
 	private ViewGroup mBtnMyCourse;
 	private ViewGroup mBtnCoupon;
+	private ViewGroup mBtnCollect;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,8 +46,10 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 		mLblAllTranMoney = (TextView) view.findViewById(R.id.all_tran_money);
 		mBtnMyCourse = (ViewGroup) view.findViewById(R.id.my_course);
 		mBtnCoupon = (ViewGroup) view.findViewById(R.id.btn_coupon);
+		mBtnCollect = (ViewGroup) view.findViewById(R.id.btn_collect);
 		mBtnMyCourse.setOnClickListener(this);
 		mBtnCoupon.setOnClickListener(this);
+		mBtnCollect.setOnClickListener(this);
 	}
 
 	private void initUserInfo() {
@@ -78,6 +82,9 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 			break;
 		case R.id.btn_coupon:
 			intent = new Intent(mContext, MyCouponActivity.class);
+			break;
+		case R.id.btn_collect:
+			intent = new Intent(mContext, MyCollectActivity.class);
 			break;
 		default:
 			return;

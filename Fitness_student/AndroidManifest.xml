@@ -91,6 +91,10 @@
             android:name=".WithdrawActivity"
             android:label="@string/title_activity_withdraw" >
         </activity>
+        <activity
+            android:name=".MyCollectActivity"
+            android:label="@string/title_activity_withdraw" >
+        </activity>
     </application>
 
 </manifest>

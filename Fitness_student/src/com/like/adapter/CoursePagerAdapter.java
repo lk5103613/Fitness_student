@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class CoursePagerAdapter extends FragmentStatePagerAdapter {
 	
-	
 	private CourseUnpayFragment mUnpayFramgnet = new CourseUnpayFragment();
 	private CourseUnConsumeFragment mUnConsumeFragment = new CourseUnConsumeFragment();
 	private CourseCancelFragment mCancelFragment = new CourseCancelFragment();
