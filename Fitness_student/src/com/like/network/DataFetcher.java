@@ -65,6 +65,7 @@ public class DataFetcher {
 			Response.ErrorListener errorListener) {
 		JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET,
 				url, getJsonArrayParam(params), listener, errorListener);
+		mQueue.add(request);
 	}
 
 	public void fetchCoachList(String url, int page, int catid, int sort,

@@ -61,7 +61,7 @@ public class CourseListAdapter extends BaseAdapter {
 		vh.sCourseCnt.setText(course.courseDuration + "/课时");
 		mImgLoader.get(APIS.BASE_URL + course.avatar, 
 				ImageLoader.getImageListener(vh.sUserIcon, R.color.white, R.color.white));
-		if(course.gender == Course.MALE) {
+		if(course.gender.equals(Course.MALE)) {
 			vh.sGender.setImageResource(R.drawable.male);
 		} else {
 			vh.sGender.setImageResource(R.drawable.female);
