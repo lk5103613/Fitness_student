@@ -176,7 +176,7 @@
                     android:background="#E4E4E4" />
 
                 <RelativeLayout
-                    android:id="@+id/layout2"
+                    android:id="@+id/my_msg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -387,7 +387,7 @@
                     android:background="#E4E4E4" />
 
                 <RelativeLayout
-                    android:id="@+id/layout7"
+                    android:id="@+id/my_share"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"

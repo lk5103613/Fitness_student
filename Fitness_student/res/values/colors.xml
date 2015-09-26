@@ -58,5 +58,7 @@
 	
 	<color name="green">#73e77a</color>
 	<color name="purple">#a572e8</color>
+	<color name="dark_green">#51c45c</color>
+	<color name="blue">#58bcde</color>
 
 </resources>

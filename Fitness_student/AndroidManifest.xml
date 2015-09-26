@@ -108,7 +108,19 @@
             android:label="@string/title_activity_course_detail" >
         </activity>
         <activity
-            android:name=".SysMsgActivity"
+            android:name=".MyMsgActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".MyShareActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".PayActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".PayResultActivity"
             android:label="@string/title_activity_course_detail" >
         </activity>
     </application>

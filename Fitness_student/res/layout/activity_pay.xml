@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#ff7674" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="支付"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_tv_text_size" />
+
+        <LinearLayout
+            android:layout_width="40dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="back"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/title_icon_width"
+                android:layout_height="@dimen/title_icon_width"
+                android:src="@drawable/arrow_global_back" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white" >
+        
+        <TextView 
+            android:id="@+id/lbl_order_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#323232"
+            android:textSize="20sp"
+            android:text="订单号"/>
+        
+        <TextView 
+            android:id="@+id/txt_order_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#323232"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/lbl_order_no"
+            android:text="12345678910221133"/>
+        
+        <TextView android:id="@+id/lbl_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_red_color"
+            android:layout_below="@id/lbl_order_no"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="合计："/>
+        
+        <TextView android:id="@+id/txt_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_red_color"
+            android:layout_below="@id/lbl_order_no"
+            android:layout_toRightOf="@id/lbl_sum"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="999元"/>
+        
+        <View 
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/txt_sum"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="#b8b8b8" />
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider"
+            android:textColor="@color/primary_red_color"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp"
+            android:text="请在24小时内支付，否则支付宝后台自动取消订单"/>
+    </RelativeLayout>
+    
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        
+        <TextView
+            android:id="@+id/lbl_select_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#989898"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="选择支付方式"/>
+        
+        <View 
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/lbl_select_pay"
+            android:background="#b8b8b8" />
+        
+        <ImageView 
+            android:id="@+id/alipay_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/divider1"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/alpay_icon"/>
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#323232"
+            android:layout_toRightOf="@id/alipay_icon"
+            android:layout_below="@id/divider1"
+            android:textSize="16sp"
+            android:layout_marginLeft="20dp"
+            android:text="支付宝"/>
+        
+        <ImageView android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:src="@drawable/icon_right"
+            android:layout_below="@id/divider1"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"/>
+        
+        <View 
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/alipay_icon"
+            android:background="#b8b8b8" />
+        
+        <ImageView 
+            android:id="@+id/wx_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/divider2"
+            android:src="@drawable/wx_icon"/>
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#323232"
+            android:layout_below="@id/divider2"
+            android:layout_toRightOf="@id/wx_icon"
+            android:textSize="16sp"
+            android:layout_marginLeft="20dp"
+            android:text="微信"/>
+        
+        <ImageView android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:src="@drawable/icon_right"
+            android:layout_below="@id/divider2"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"/>
+        <View 
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/wx_icon"
+            android:background="#b8b8b8" />
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider3"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/primary_red_color"
+            android:text="支付有问题拨打123456联系客服"/>
+    </RelativeLayout>
+
+</LinearLayout>
