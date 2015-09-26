@@ -11,7 +11,7 @@
         android:orientation="vertical"
         android:paddingTop="@dimen/margin"
         android:paddingBottom="@dimen/margin"
-        android:paddingLeft="@dimen/margin_b5">
+        android:layout_marginLeft="@dimen/margin_b5">
 
         <TextView
             android:id="@id/textview1"
