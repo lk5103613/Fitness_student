@@ -31,7 +31,7 @@ public class CourseDetailActivity extends BaseActivity {
 	
 	private ListView mPingYuList;
 	private CoursePyListAdapter mAdapter;
-	private List<Comment> mComments = new ArrayList<>();
+	private List<Comment> mComments = new ArrayList<Comment>();
 
 	private PopupWindow mSharePop;
 	private PopupWindow mBuyPop;

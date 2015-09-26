@@ -15,6 +15,8 @@ import com.like.entity.LoginResult;
 import com.like.fitness.student.MyCollectActivity;
 import com.like.fitness.student.MyCouponActivity;
 import com.like.fitness.student.MyCourseActivity;
+import com.like.fitness.student.MySettingActivity;
+import com.like.fitness.student.MyWalletActivity;
 import com.like.fitness.student.R;
 import com.like.network.APIS;
 import com.like.network.GsonUtil;
@@ -28,6 +30,8 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 	private ViewGroup mBtnMyCourse;
 	private ViewGroup mBtnCoupon;
 	private ViewGroup mBtnCollect;
+	private ViewGroup mBtnMyWallet;
+	private ViewGroup mBtnMySetting;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,10 +50,14 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 		mLblAllTranMoney = (TextView) view.findViewById(R.id.all_tran_money);
 		mBtnMyCourse = (ViewGroup) view.findViewById(R.id.my_course);
 		mBtnCoupon = (ViewGroup) view.findViewById(R.id.btn_coupon);
+		mBtnMyWallet = (ViewGroup) view.findViewById(R.id.my_wallet);
 		mBtnCollect = (ViewGroup) view.findViewById(R.id.btn_collect);
+		mBtnMySetting = (ViewGroup) view.findViewById(R.id.my_setting);
 		mBtnMyCourse.setOnClickListener(this);
 		mBtnCoupon.setOnClickListener(this);
 		mBtnCollect.setOnClickListener(this);
+		mBtnMyWallet.setOnClickListener(this);
+		mBtnMySetting.setOnClickListener(this);
 	}
 
 	private void initUserInfo() {
@@ -85,6 +93,12 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 			break;
 		case R.id.btn_collect:
 			intent = new Intent(mContext, MyCollectActivity.class);
+			break;
+		case R.id.my_wallet:
+			intent = new Intent(mContext, MyWalletActivity.class);
+			break;
+		case R.id.my_setting:
+			intent = new Intent(mContext, MySettingActivity.class);
 			break;
 		default:
 			return;

@@ -36,7 +36,7 @@ public class CoachDetailIndexFragment extends Fragment {
     private Context mContext;
     private ListView mList;
 
-    private List<BaseEntity> mPEntities = new ArrayList<>();
+    private List<BaseEntity> mPEntities = new ArrayList<BaseEntity>();
     private DetailListAdapter mAdapter;
     private LinearLayout mFooter;
     private DataFetcher mDataFetcher;

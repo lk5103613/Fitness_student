@@ -21,8 +21,8 @@ public class CoachDetailEntity {
 	public int click_cnt;
 	public String skill;
 	
-	public List<KeChengEntity> courList = new ArrayList<>();
-	public List<PingYuEntity> commentList = new ArrayList<>();
+	public List<KeChengEntity> courList = new ArrayList<KeChengEntity>();
+	public List<PingYuEntity> commentList = new ArrayList<PingYuEntity>();
 	@Override
 	public String toString() {
 		return "CoachDetailEntity [coachid=" + coachid + ", truename="

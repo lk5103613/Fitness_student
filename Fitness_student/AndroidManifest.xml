@@ -99,6 +99,18 @@
             android:name=".MyCollectActivity"
             android:label="@string/title_activity_course_detail" >
         </activity>
+        <activity
+            android:name=".MyWalletActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".WithdrawHistoryActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".SysMsgActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
     </application>
 
 </manifest>

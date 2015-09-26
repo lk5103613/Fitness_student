@@ -55,5 +55,8 @@
 	<color name="text_orange">#ffff4300</color>
 	
 	<color name="mask">#33000000</color>
+	
+	<color name="green">#73e77a</color>
+	<color name="purple">#a572e8</color>
 
 </resources>

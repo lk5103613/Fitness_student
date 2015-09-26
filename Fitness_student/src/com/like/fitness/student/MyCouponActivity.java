@@ -14,7 +14,7 @@ public class MyCouponActivity extends BaseActivity {
 	
 	private ListView mCouponListView;
 	private MyCouponListAdapter mAdapter;
-	private List<Coupon> mCoupons = new ArrayList<>();
+	private List<Coupon> mCoupons = new ArrayList<Coupon>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

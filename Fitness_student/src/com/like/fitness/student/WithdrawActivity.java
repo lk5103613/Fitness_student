@@ -1,5 +1,6 @@
 package com.like.fitness.student;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,8 +22,9 @@ public class WithdrawActivity extends BaseActivity {
 	 * 提现历史点击事件
 	 * @param view
 	 */
-	public void history(View view){
-		
+	public void toHistory(View view){
+		Intent intent = new Intent(mContext, WithdrawHistoryActivity.class);
+		startActivity(intent);
 	}
 	
 	/**

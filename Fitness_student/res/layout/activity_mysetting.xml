@@ -56,8 +56,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="邮箱"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size" />
+                android:textColor="#323232"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -91,8 +91,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="密码"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size" />
+                android:textColor="#323232"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -126,8 +126,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="微信"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size" />
+                android:textColor="#323232"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -161,8 +161,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="微薄"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size" />
+                android:textColor="#323232"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -196,8 +196,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="手机"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size" />
+                android:textColor="#323232"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"

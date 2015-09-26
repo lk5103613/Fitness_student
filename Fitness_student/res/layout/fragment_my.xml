@@ -261,7 +261,7 @@
                 android:orientation="vertical" >
 
                 <RelativeLayout
-                    android:id="@+id/layout4"
+                    android:id="@+id/my_wallet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -291,6 +291,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_right" />
+                    
                 </RelativeLayout>
 
                 <View
@@ -347,7 +348,7 @@
                 android:orientation="vertical" >
 
                 <RelativeLayout
-                    android:id="@+id/layout6"
+                    android:id="@+id/my_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
