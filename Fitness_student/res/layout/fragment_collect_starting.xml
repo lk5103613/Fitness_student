@@ -4,5 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <com.like.customview.pulltorefresh.PullToRefreshListView
+        android:id="@+id/collect_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#00000000"/>
 
 </LinearLayout>

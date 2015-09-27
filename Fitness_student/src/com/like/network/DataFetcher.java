@@ -177,5 +177,29 @@ public class DataFetcher {
 		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
 		mQueue.add(request);
 	}
-
+	
+	public void fetchCollection(String uId, String flag,Listener<String> listener, ErrorListener errorListener){
+		String url = UrlParamGenerator.getPath(APIS.GET_MY_COLLECTION, uId, flag);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
+		mQueue.add(request);
+	}
+	
+	public void fetchMsgs(String uId,Listener<String> listener, ErrorListener errorListener){
+		String url = UrlParamGenerator.getPath(APIS.GET_MY_MSG, uId);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
+		mQueue.add(request);
+	}
+	
+	public void fetchAvailable(String uId,Listener<String> listener, ErrorListener errorListener){
+		String url = UrlParamGenerator.getPath(APIS.GET_VALID_MONEY, uId);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
+		mQueue.add(request);
+	}
+	
+	public void fetchWithdraw(String uId,Listener<String> listener, ErrorListener errorListener){
+		String url = UrlParamGenerator.getPath(APIS.WITHDRAW, uId);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
+		mQueue.add(request);
+	}
+	
 }

@@ -1,5 +1,6 @@
 package com.like.fitness.student;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class BaseActivity extends FragmentActivity {
 	
 	protected LoginResult mLoginUser;
 	protected SharedPreferences mLoginSharef;
+	protected ProgressDialog mLoadingDialog;
 	
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -49,6 +51,25 @@ public class BaseActivity extends FragmentActivity {
 	
 	public void back(View v) {
 		finish();
+	}
+	
+	protected void showLoading(boolean show) {
+		if(show) {
+			if(mLoadingDialog == null) {
+				mLoadingDialog = new ProgressDialog(this);
+				mLoadingDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+				mLoadingDialog.setMessage("请等待");
+			}
+			if (!mLoadingDialog.isShowing()) {
+				mLoadingDialog.show();
+			}
+			
+		} else {
+			if(mLoadingDialog == null)
+				return;
+			if(mLoadingDialog.isShowing()) 
+				mLoadingDialog.dismiss();
+		}
 	}
 
 }

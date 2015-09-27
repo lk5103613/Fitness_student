@@ -17,6 +17,16 @@ public class APIS {
     public static final String GET_MY_INFO = BASE_URL + "/index.php/AppUser/loadUserInfo?uid=%1";
     
     public static final String GET_MY_COURSE = BASE_URL + "/index.php/AppI/orderPage?uid=%1&status=%2";
+   //我的优惠券
     public static final String GET_MY_COUPON = BASE_URL + "/index.php/appCoupon/findCouponList?uid=%1";
     
+//我的消息
+    public static final String GET_MY_MSG = BASE_URL+"/index.php/appMsg/index?uid=%1";
+//我的收藏, flag: 0:热门    1:离我最近    2:即将开始
+    public static final String GET_MY_COLLECTION = BASE_URL + "/index.php/AppFav/findFavCoachList?uid=%1&flag=%2";
+
+ //获取可用金额
+    public static final String GET_VALID_MONEY = BASE_URL+"/index.php/AppI/loadValidMoneyFn?uid=%1";
+ //提现
+    public static final String WITHDRAW = BASE_URL+"/index.php/AppI/withdraw?UID=%1&money=%2";
 }

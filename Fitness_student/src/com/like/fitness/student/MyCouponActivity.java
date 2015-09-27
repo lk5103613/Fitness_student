@@ -1,5 +1,6 @@
 package com.like.fitness.student;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +8,11 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.android.volley.Response.Listener;
+import com.google.gson.reflect.TypeToken;
 import com.like.adapter.MyCouponListAdapter;
+import com.like.entity.Category;
 import com.like.entity.Coupon;
+import com.like.network.GsonUtil;
 
 public class MyCouponActivity extends BaseActivity {
 	
@@ -23,7 +27,6 @@ public class MyCouponActivity extends BaseActivity {
 		mCouponListView = (ListView) findViewById(R.id.my_coupon_list);
 		mAdapter = new MyCouponListAdapter(this, mCoupons);
 		mCouponListView.setAdapter(mAdapter);
-		initData();
 		updateList();
 	}
 	
@@ -31,17 +34,15 @@ public class MyCouponActivity extends BaseActivity {
 		mDataFetcher.fetchMyCoupon(mLoginUser.uid, new Listener<String>() {
 			@Override
 			public void onResponse(String response) {
-				System.out.println(response);
+				System.out.println("response " + response);
+				Type type = new TypeToken<List<Coupon>>() {}.getType();
+				List<Coupon> coupons = GsonUtil.gson.fromJson(
+						response.toString(), type);
+				System.out.println("coupons"+coupons);
+				mCoupons.clear();
+				mCoupons.addAll(coupons);
 			}
 		}, mErrorListener);
 	}
 	
-	private void initData(){
-		for (int i = 0; i < 10; i++) {
-			Coupon coupon = new Coupon();
-			mCoupons.add(coupon);
-		}
-		mAdapter.notifyDataSetChanged();
-	}
-
 }
