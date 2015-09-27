@@ -7,6 +7,6 @@ import java.util.List;
  * Created by Administrator on 2015/8/21.
  */
 public class Coaches {
-   public List<CoachInfo> list = new ArrayList<>();
+   public List<CoachInfo> list = new ArrayList<CoachInfo>();
    public int size;
 }

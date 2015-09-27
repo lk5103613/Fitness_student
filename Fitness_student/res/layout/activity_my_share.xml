@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_share_bg"
+    android:orientation="vertical" >
+    
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#ff7674" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="我的分享"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_tv_text_size" />
+
+        <LinearLayout
+            android:layout_width="40dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="back"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/title_icon_width"
+                android:layout_height="@dimen/title_icon_width"
+                android:src="@drawable/arrow_global_back" />
+        </LinearLayout>
+    </RelativeLayout>
+    
+     <RelativeLayout android:layout_width="match_parent"
+         android:layout_height="60dp"
+         android:background="#f4f4f4">
+         <TextView android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="16sp"
+             android:textColor="#636363"
+             android:layout_centerInParent="true"
+             android:text="分享至我的好友，才能享受更多老师资源哦~~"/>
+         <View android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="#d9d5d6"
+             android:layout_alignParentBottom="true"/>
+     </RelativeLayout>
+     
+     <LinearLayout android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="11dp"
+         android:paddingLeft="20dp"
+         android:paddingRight="20dp"
+         android:orientation="horizontal">
+         
+         <RelativeLayout android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1">
+             <ImageView 
+                 android:id="@+id/wx_icon"
+                 android:layout_width="55dp"
+                 android:layout_height="55dp"
+                 android:layout_marginBottom="5dp"
+                 android:layout_centerHorizontal="true"
+                 android:src="@drawable/share_wx"/>
+             <TextView android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/wx_icon"
+                 android:textColor="#646464"
+                 android:textSize="14sp"
+                 android:layout_centerHorizontal="true"
+                 android:text="微信"/>
+         </RelativeLayout>
+         <RelativeLayout android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1">
+             <ImageView 
+                 android:id="@+id/friends_icon"
+                 android:layout_width="55dp"
+                 android:layout_height="55dp"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginBottom="5dp"
+                 android:src="@drawable/share_friends"/>
+             <TextView android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/friends_icon"
+                 android:layout_centerHorizontal="true"
+                 android:textColor="#646464"
+                 android:textSize="14sp"
+                 android:text="朋友圈"/>
+         </RelativeLayout>
+         <RelativeLayout android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1">
+             <ImageView 
+                 android:id="@+id/wb_icon"
+                 android:layout_width="55dp"
+                 android:layout_height="55dp"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginBottom="5dp"
+                 android:src="@drawable/share_wb"/>
+             <TextView android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/wb_icon"
+                 android:layout_centerHorizontal="true"
+                 android:textColor="#646464"
+                 android:textSize="14sp"
+                 android:text="新浪微博"/>
+         </RelativeLayout>
+         <RelativeLayout android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1">
+             <ImageView 
+                 android:id="@+id/qq_icon"
+                 android:layout_width="55dp"
+                 android:layout_height="55dp"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginBottom="5dp"
+                 android:src="@drawable/share_qq"/>
+             <TextView android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/qq_icon"
+                 android:layout_centerHorizontal="true"
+                 android:textColor="#646464"
+                 android:textSize="14sp"
+                 android:text="QQ"/>
+         </RelativeLayout>
+         
+     </LinearLayout>
+
+</LinearLayout>

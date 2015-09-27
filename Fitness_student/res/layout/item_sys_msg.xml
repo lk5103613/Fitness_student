@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <View android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f4f4f4"/>
+    
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+        
+        <TextView 
+            android:id="@+id/icon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/circle_text_coloe_dark_green"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginRight="15dp"
+            android:textSize="20dp"
+            android:text="订"/>
+        
+        <TextView 
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2f2f2f"
+            android:layout_toRightOf="@id/icon"
+            android:textSize="16sp"
+            android:text="订单"/>
+        
+        <TextView 
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#8d8d8d"
+            android:layout_alignParentRight="true"
+            android:text="2015-08-31 20:07:23"/>
+        
+        <TextView 
+            android:id="@+id/des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#818181"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/title"
+            android:layout_toRightOf="@id/icon"
+            android:text="报班成功：您已成功报名胡世思老师的瑜伽课！"/>
+        
+    </RelativeLayout>
+
+</LinearLayout>

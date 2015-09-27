@@ -79,7 +79,7 @@
                 android:hint="请输入手机号码"
                 android:background="@null"
                 android:textColor="@color/grey_btn_text_color"
-                android:text="13402170780"
+                android:text="13777777777"
                 android:maxLength="11"/>
             
         </LinearLayout>

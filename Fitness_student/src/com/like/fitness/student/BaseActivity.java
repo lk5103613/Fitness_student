@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Response.ErrorListener;
@@ -44,6 +45,10 @@ public class BaseActivity extends FragmentActivity {
 				return;
 			}
 		};
+	}
+	
+	public void back(View v) {
+		finish();
 	}
 
 }

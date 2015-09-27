@@ -65,6 +65,7 @@ public class DataFetcher {
 			Response.ErrorListener errorListener) {
 		JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET,
 				url, getJsonArrayParam(params), listener, errorListener);
+		mQueue.add(request);
 	}
 
 	public void fetchCoachList(String url, int page, int catid, int sort,
@@ -166,9 +167,14 @@ public class DataFetcher {
 	}
 	
 	public void fetchMyCourse(String uid, String status, Listener<String> listener, ErrorListener errorListener) {
-		Map<String, String> params = UrlParamGenerator.getMapParams(APIS.GET_MY_COURSE, uid, status);
-		String url = UrlParamGenerator.getBasePath(APIS.GET_MY_COURSE);
-		MyRequest request = new MyRequest(Method.POST, url, params, listener, errorListener);
+		String url = UrlParamGenerator.getPath(APIS.GET_MY_COURSE, uid, status);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
+		mQueue.add(request);
+	}
+	
+	public void fetchMyCoupon(String uid, Listener<String> listener, ErrorListener errorListener) {
+		String url = UrlParamGenerator.getPath(APIS.GET_MY_COUPON, uid);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
 		mQueue.add(request);
 	}
 

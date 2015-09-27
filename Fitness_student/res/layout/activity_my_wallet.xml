@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#ff7674" >
+
+        <LinearLayout
+            android:layout_width="40dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="back"
+            android:orientation="vertical" >
+            <ImageView
+                android:layout_width="@dimen/title_icon_width"
+                android:layout_height="@dimen/title_icon_width"
+                android:src="@drawable/arrow_global_back" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="我的钱包"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_tv_text_size" />
+    </RelativeLayout>
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="30dp">
+            <ImageView 
+                android:id="@+id/my_money_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/my_money"/>
+            
+            <TextView 
+                android:id="@+id/lbl_my_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/my_money_icon"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:textColor="#333333"
+                android:layout_centerVertical="true"
+                android:text="我的钱包"/>
+            <TextView 
+                android:id="@+id/lbl_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/lbl_my_wallet"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:textColor="@color/primary_red_color"
+                android:layout_marginLeft="20dp"
+                android:text="0元" />
+            
+            
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/icon_right" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/margin_b5"
+            android:background="#E4E4E4" />
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:clickable="true"
+            android:onClick="toRecharge"
+            android:layout_marginLeft="30dp">
+            <TextView 
+                android:id="@+id/topup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:background="@drawable/circle_text_coloe_green"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="充"/>
+            
+            <TextView 
+                android:id="@+id/lbl_topup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/topup"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:textColor="#333333"
+                android:layout_centerVertical="true"
+                android:text="充值"/>
+            
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/icon_right" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/margin_b5"
+            android:background="#E4E4E4" />
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:clickable="true"
+            android:onClick="toWithdraw"
+            android:layout_marginLeft="30dp">
+            <TextView 
+                android:id="@+id/withdraw_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:background="@drawable/circle_text_coloe_purple"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:text="提"/>
+            
+            <TextView 
+                android:id="@+id/lbl_withdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/withdraw_icon"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:textColor="#333333"
+                android:layout_centerVertical="true"
+                android:text="提现"/>
+            
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/icon_right" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E4E4E4" />
+        
+    </LinearLayout>
+
+</LinearLayout>

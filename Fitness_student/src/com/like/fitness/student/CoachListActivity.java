@@ -157,7 +157,7 @@ public class CoachListActivity extends Activity {
 	}
 
 	private void addCategories(List<Category> categories) {
-		mTextViews = new ArrayList<>();
+		mTextViews = new ArrayList<TextView>();
 		for (int i = 0; i < categories.size(); i++) {
 			TextView textView = new TextView(mContext);
 			textView.setTextSize(13);
@@ -193,7 +193,7 @@ public class CoachListActivity extends Activity {
 	}
 
 	private void updateData(int cat, int page, int sort, String key) {
-		Map<String, String> params = new HashMap<>();
+		Map<String, String> params = new HashMap<String, String>();
 		params.put("currentPage", page + "");
 		params.put("catid", cat + "");
 		params.put("sort", sort + "");

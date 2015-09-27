@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/xmlbtn_redtobrightred_circle"
+        android:gravity="center"
+        android:padding="@dimen/margin"
+        android:text="再次支付"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_b1" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/xmlbtn_redtobrightred_circle"
+        android:gravity="center"
+        android:padding="@dimen/margin"
+        android:text="取消订单"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_b1" />
+</LinearLayout>

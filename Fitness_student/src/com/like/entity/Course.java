@@ -3,6 +3,9 @@ package com.like.entity;
 import com.google.gson.annotations.SerializedName;
 
 public class Course {
+	
+	public final static String FEMALE = "女";
+	public final static String MALE = "男";
 
 	@SerializedName("order_id")
 	public String orderId;
@@ -25,5 +28,6 @@ public class Course {
 	public String coachid;
 	public String avatar;
 	public String addtime2;
+	public String gender;
 
 }

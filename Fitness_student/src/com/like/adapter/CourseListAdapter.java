@@ -61,6 +61,11 @@ public class CourseListAdapter extends BaseAdapter {
 		vh.sCourseCnt.setText(course.courseDuration + "/课时");
 		mImgLoader.get(APIS.BASE_URL + course.avatar, 
 				ImageLoader.getImageListener(vh.sUserIcon, R.color.white, R.color.white));
+		if(course.gender.equals(Course.MALE)) {
+			vh.sGender.setImageResource(R.drawable.male);
+		} else {
+			vh.sGender.setImageResource(R.drawable.female);
+		}
 		return convertView;
 	}
 	
@@ -75,7 +80,7 @@ public class CourseListAdapter extends BaseAdapter {
 		public TextView sCourseName;
 		public TextView sCourseCnt;
 		public TextView sTime;
-		public Button sBtnPay;
+		public TextView sBtnPay;
 		public ImageView sGender;
 		
 		public ViewHolder(View convertView) {

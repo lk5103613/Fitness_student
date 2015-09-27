@@ -38,7 +38,6 @@
         <activity
             android:name=".CoachDetailActivity"
             android:label="@string/title_activity_coach_detail" >
-            
         </activity>
         <activity
             android:name=".MapActivity"
@@ -54,6 +53,11 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".RegActivity"
@@ -90,10 +94,34 @@
         <activity
             android:name=".CourseDetailActivity"
             android:label="@string/title_activity_course_detail" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MyCollectActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".MyWalletActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".WithdrawHistoryActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".MyMsgActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".MyShareActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".PayActivity"
+            android:label="@string/title_activity_course_detail" >
+        </activity>
+        <activity
+            android:name=".PayResultActivity"
+            android:label="@string/title_activity_course_detail" >
         </activity>
     </application>
 

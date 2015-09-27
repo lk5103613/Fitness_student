@@ -27,11 +27,11 @@ public class CourseDetailActivity extends BaseActivity {
 	private TextView mMaxCount;
 	private TextView mAddress;
 	private RadioButton mTypeMore;
-	private ScrollView mScrollView;
+	private ScrollView mScroller;
 	
 	private ListView mPingYuList;
 	private CoursePyListAdapter mAdapter;
-	private List<Comment> mComments = new ArrayList<>();
+	private List<Comment> mComments = new ArrayList<Comment>();
 
 	private PopupWindow mSharePop;
 	private PopupWindow mBuyPop;
@@ -49,13 +49,13 @@ public class CourseDetailActivity extends BaseActivity {
 		mAddress = (TextView) findViewById(R.id.address);
 		mTypeMore = (RadioButton) findViewById(R.id.type_more);
 		mPingYuList = (ListView) findViewById(R.id.pingyu_listview);
-		mScrollView = (ScrollView) findViewById(R.id.scrollview);
+		mScroller = (ScrollView) findViewById(R.id.scrollview);
 
 		initData();
 		mAdapter = new CoursePyListAdapter(this, mComments);
 		mPingYuList.setAdapter(mAdapter);
 		DisplayUtil.getInstance(this).setListViewHeightBasedOnChildren(this, mPingYuList);
-		mScrollView.smoothScrollTo(0, 0);
+		mScroller.smoothScrollTo(0, 0);
 	}
 
 	private void initData() {
@@ -71,7 +71,6 @@ public class CourseDetailActivity extends BaseActivity {
 	 * @param view
 	 */
 	public void share(View view) {
-		System.out.println("share");
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View popView = layoutInflater.inflate(R.layout.share_pop, null);
 
