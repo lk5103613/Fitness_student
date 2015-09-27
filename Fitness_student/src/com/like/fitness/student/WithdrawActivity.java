@@ -1,15 +1,14 @@
 package com.like.fitness.student;
 
-import com.android.volley.Response.Listener;
-import com.like.entity.AvailableMoney;
-import com.like.network.GsonUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Response.Listener;
 
 public class WithdrawActivity extends BaseActivity {
 	private TextView mAvailable;
@@ -41,6 +40,10 @@ public class WithdrawActivity extends BaseActivity {
 	 * @param view
 	 */
 	public void confirm(View view){
+		if (TextUtils.isEmpty(mMoney.getText().toString())) {
+			Toast.makeText(this, "请输入提现金额", Toast.LENGTH_SHORT).show();
+			return;
+		}
 		if (Float.parseFloat(mAvaildMoney) < Float.parseFloat(mMoney.getText().toString())) {
 			Toast.makeText(this, "超出可提现金额", Toast.LENGTH_SHORT).show();
 		} else {
