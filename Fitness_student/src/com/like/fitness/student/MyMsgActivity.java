@@ -22,7 +22,7 @@ public class MyMsgActivity extends BaseActivity {
 	
 	private PullToRefreshListView mList;
 	private MyMsgAdapter mAdapter;
-	private List<MessageItem> items = new ArrayList<>();
+	private List<MessageItem> items = new ArrayList<MessageItem>();
 	
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -30,8 +30,6 @@ public class MyMsgActivity extends BaseActivity {
 		setContentView(R.layout.activity_sys_msg);
 		
 		mList = (PullToRefreshListView) findViewById(R.id.msg_list);
-		mAdapter = new MyMsgAdapter(mContext,items);
-		mList.setAdapter(mAdapter);
 		getMsgs();
 	}
 	
@@ -43,6 +41,8 @@ public class MyMsgActivity extends BaseActivity {
 				List<MessageItem> result = GsonUtil.gson.fromJson(response, type);
 				items.clear();
 				items.addAll(result);
+				mAdapter = new MyMsgAdapter(mContext,items);
+				mList.setAdapter(mAdapter);
 				mList.onRefreshComplete();
 			}
 		},  new ErrorListener() {

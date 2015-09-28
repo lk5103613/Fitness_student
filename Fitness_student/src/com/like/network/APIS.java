@@ -28,5 +28,8 @@ public class APIS {
  //获取可用金额
     public static final String GET_VALID_MONEY = BASE_URL+"/index.php/AppI/loadValidMoneyFn?uid=%1";
  //提现
-    public static final String WITHDRAW = BASE_URL+"/index.php/AppI/withdraw?UID=%1&money=%2";
+    public static final String WITHDRAW = BASE_URL+"/index.php/AppI/withdraw?uid=%1&money=%2";
+    public static final String WITHDRAW_HISTORY = BASE_URL + "/index.php/AppI/findWithdrawHistory?uid=%1";
+    
+    public static final String GET_COURSE_DETAIL = BASE_URL + "/index.php/AppCourse/detailFn?course_id=%1";
 }

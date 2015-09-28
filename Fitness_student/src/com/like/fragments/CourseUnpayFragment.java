@@ -52,6 +52,9 @@ public class CourseUnpayFragment extends BaseFragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				Intent intent = new Intent(mContext, CourseDetailActivity.class);
+				position -= 1;
+				Course course = (Course) mAdapter.getItem(position);
+				intent.putExtra("courseId", course.courseId);
 				startActivity(intent);
 			}
 		});
@@ -61,6 +64,7 @@ public class CourseUnpayFragment extends BaseFragment {
 		mDataFetcher.fetchMyCourse(mLoginUser.uid, mStatus+"", new Listener<String>(){
 			@Override
 			public void onResponse(String response) {
+				System.out.println("all courses   " + response);
 				Type type = new TypeToken<ListResult<Course>>(){}.getType();
 				ListResult<Course> courseResult = GsonUtil.gson.fromJson(response, type);
 				mAdapter = new CourseListAdapter(mContext, courseResult.list);

@@ -196,8 +196,20 @@ public class DataFetcher {
 		mQueue.add(request);
 	}
 	
-	public void fetchWithdraw(String uId,Listener<String> listener, ErrorListener errorListener){
-		String url = UrlParamGenerator.getPath(APIS.WITHDRAW, uId);
+	public void fetchWithdraw(String uId, String money, Listener<String> listener, ErrorListener errorListener){
+		String url = UrlParamGenerator.getPath(APIS.WITHDRAW, uId, money);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
+		mQueue.add(request);
+	}
+	
+	public void fetchWidthdrawHis(String uId, Listener<String> listener, ErrorListener errorListener) {
+		String url = UrlParamGenerator.getPath(APIS.WITHDRAW_HISTORY, uId);
+		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
+		mQueue.add(request);
+	}
+	
+	public void fetchCourseDetail(String courseId, Listener<String> listener, ErrorListener errorListener) {
+		String url = UrlParamGenerator.getPath(APIS.GET_COURSE_DETAIL, courseId);
 		MyRequest request = new MyRequest(Method.GET, url, listener, errorListener);
 		mQueue.add(request);
 	}

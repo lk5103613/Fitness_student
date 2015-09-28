@@ -18,6 +18,11 @@ public class MyWalletActivity extends BaseActivity {
 		super.onCreate(arg0);
 		setContentView(R.layout.activity_my_wallet);
 		mMoney = (TextView) findViewById(R.id.lbl_money);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
 		fetchData();
 	}
 	
@@ -30,7 +35,7 @@ public class MyWalletActivity extends BaseActivity {
 		Bundle bundle = new Bundle();
 		//for test
 		
-		bundle.putString("available", "22.5");//mAvailable
+		bundle.putString("available", mAvailable);//mAvailable
 		Intent intent = new Intent(mContext, WithdrawActivity.class);
 		intent.putExtras(bundle);
 		startActivity(intent);
@@ -42,8 +47,8 @@ public class MyWalletActivity extends BaseActivity {
 			public void onResponse(String response) {
 				System.out.println(response);
 				AvailableMoney result = GsonUtil.gson.fromJson(response, AvailableMoney.class);
-				mAvailable = result.money;
-				mMoney.setText(result.money);
+				mAvailable = result.balance;
+				mMoney.setText(result.balance);
 				
 			}
 		}, mErrorListener);

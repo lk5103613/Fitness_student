@@ -15,7 +15,10 @@ import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.android.volley.Response.Listener;
 import com.like.adapter.CoursePyListAdapter;
+import com.like.entity.CourseDetail;
+import com.like.network.GsonUtil;
 import com.like.utils.DisplayUtil;
 
 public class CourseDetailActivity extends BaseActivity {
@@ -31,18 +34,17 @@ public class CourseDetailActivity extends BaseActivity {
 	
 	private ListView mPingYuList;
 	private CoursePyListAdapter mAdapter;
-	private List<Comment> mComments = new ArrayList<Comment>();
 
 	private PopupWindow mSharePop;
 	private PopupWindow mBuyPop;
+	private String mCourseId;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_coursedetails);
 		mCourseName = (TextView) findViewById(R.id.course_name);
-		mCourseName = (TextView) findViewById(R.id.course_name);
-		mCourseName = (TextView) findViewById(R.id.money);
+		mCourseMoney = (TextView) findViewById(R.id.money);
 		mCoachName = (TextView) findViewById(R.id.coach_name);
 		mTime = (TextView) findViewById(R.id.time);
 		mMaxCount = (TextView) findViewById(R.id.max_count);
@@ -50,19 +52,29 @@ public class CourseDetailActivity extends BaseActivity {
 		mTypeMore = (RadioButton) findViewById(R.id.type_more);
 		mPingYuList = (ListView) findViewById(R.id.pingyu_listview);
 		mScroller = (ScrollView) findViewById(R.id.scrollview);
+		
+		mCourseId = getIntent().getStringExtra("courseId");
 
-		initData();
-		mAdapter = new CoursePyListAdapter(this, mComments);
-		mPingYuList.setAdapter(mAdapter);
+		updateData();
+		
 		DisplayUtil.getInstance(this).setListViewHeightBasedOnChildren(this, mPingYuList);
 		mScroller.smoothScrollTo(0, 0);
 	}
-
-	private void initData() {
-		for (int i = 0; i < 3; i++) {
-			Comment comment = new Comment();
-			mComments.add(comment);
-		}
+	
+	private void updateData() {
+		mDataFetcher.fetchCourseDetail(mCourseId, new Listener<String>() {
+			@Override
+			public void onResponse(String response) {
+				CourseDetail detail = GsonUtil.gson.fromJson(response, CourseDetail.class);
+				mCourseName.setText(detail.courseName);
+				mCoachName.setText(detail.truename);
+				mTime.setText(detail.addTime);
+				mAddress.setText(detail.area);
+				mCourseMoney.setText(detail.price);
+				mAdapter = new CoursePyListAdapter(mContext, detail.commentlist);
+				mPingYuList.setAdapter(mAdapter);
+			}
+		}, mErrorListener);
 	}
 
 	/**

@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Response.Listener;
+import com.like.entity.CommonResult;
+import com.like.network.GsonUtil;
 
 public class WithdrawActivity extends BaseActivity {
 	private TextView mAvailable;
@@ -47,9 +49,19 @@ public class WithdrawActivity extends BaseActivity {
 		if (Float.parseFloat(mAvaildMoney) < Float.parseFloat(mMoney.getText().toString())) {
 			Toast.makeText(this, "超出可提现金额", Toast.LENGTH_SHORT).show();
 		} else {
-			mDataFetcher.fetchWithdraw(mLoginUser.uid, new Listener<String>() {
+			final float money = Float.parseFloat(mMoney.getText().toString());
+			mDataFetcher.fetchWithdraw(mLoginUser.uid, money+"", new Listener<String>() {
 			@Override
 			public void onResponse(String response) {
+				CommonResult result = GsonUtil.gson.fromJson(response, CommonResult.class);
+				if(result.code == 1) {
+					Toast.makeText(mContext, "提现成功", Toast.LENGTH_SHORT).show();
+					float leftMoney = Float.parseFloat(mAvaildMoney) - money;
+					mAvailable.setText(leftMoney + "");
+					mMoney.setText("");
+				} else {
+					Toast.makeText(mContext, "提现失败", Toast.LENGTH_SHORT).show();
+				}
 				System.out.println("response " + response);
 			}
 		}, mErrorListener);

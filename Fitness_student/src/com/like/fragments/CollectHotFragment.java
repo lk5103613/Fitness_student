@@ -27,7 +27,7 @@ import com.like.network.GsonUtil;
 public class CollectHotFragment extends BaseFragment {
 
 	private PullToRefreshListView mList;
-	private List<CollectItem> mCollectItems = new ArrayList<>();
+	private List<CollectItem> mCollectItems = new ArrayList<CollectItem>();
 	private CollectListAdapter mAdapter;
 	
 	@Override

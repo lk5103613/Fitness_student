@@ -25,8 +25,6 @@ public class MyCouponActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_coupon);
 		mCouponListView = (ListView) findViewById(R.id.my_coupon_list);
-		mAdapter = new MyCouponListAdapter(this, mCoupons);
-		mCouponListView.setAdapter(mAdapter);
 		updateList();
 	}
 	
@@ -34,13 +32,13 @@ public class MyCouponActivity extends BaseActivity {
 		mDataFetcher.fetchMyCoupon(mLoginUser.uid, new Listener<String>() {
 			@Override
 			public void onResponse(String response) {
-				System.out.println("response " + response);
 				Type type = new TypeToken<List<Coupon>>() {}.getType();
 				List<Coupon> coupons = GsonUtil.gson.fromJson(
 						response.toString(), type);
-				System.out.println("coupons"+coupons);
 				mCoupons.clear();
 				mCoupons.addAll(coupons);
+				mAdapter = new MyCouponListAdapter(mContext, mCoupons);
+				mCouponListView.setAdapter(mAdapter);
 			}
 		}, mErrorListener);
 	}
