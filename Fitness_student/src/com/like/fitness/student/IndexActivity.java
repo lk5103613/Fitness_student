@@ -114,7 +114,6 @@ public class IndexActivity extends BaseActivity implements OnClickListener, Sear
 		default:
 			break;
 		}
-
 	}
 
 	private void changeTab(int to) {
