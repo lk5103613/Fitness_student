@@ -74,5 +74,8 @@ public class BaseFragment extends Fragment {
 				mLoadingDialog.dismiss();
 		}
 	}
+	
+	public void updateData(String key) {
+	}
 
 }
