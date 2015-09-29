@@ -1,12 +1,20 @@
 package com.like.fragments;
 
+import java.io.File;
+
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.Response.Listener;
@@ -22,9 +30,12 @@ import com.like.fitness.student.R;
 import com.like.fitness.student.MyMsgActivity;
 import com.like.network.APIS;
 import com.like.network.GsonUtil;
+import com.like.utils.BitmapUtil;
+import com.like.utils.UploadUtil;
 
 public class MyInfoFragment extends BaseFragment implements OnClickListener {
-	
+	private final static int REQUEST_TAKE_PHOTO = 0;
+	private final static int REQUEST_FROM_FILE = 1;
 	private RoundImageView mHeadIcon;
 	private TextView mLblNickname;
 	private TextView mLblAllTranCnt;
@@ -36,6 +47,8 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 	private ViewGroup mBtnMySetting;
 	private ViewGroup mBtnMsg;
 	private ViewGroup mBtnShare;
+	private Dialog mDialog;
+	private String mAvatar;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,6 +79,40 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 		mBtnMySetting.setOnClickListener(this);
 		mBtnMsg.setOnClickListener(this);
 		mBtnShare.setOnClickListener(this);
+		mHeadIcon.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				showDialog();
+			}
+		});
+	}
+	
+	private void showDialog() {
+		if(mDialog == null) {
+			mDialog = new Dialog(mContext, R.style.Theme_dialog);
+			View view = LayoutInflater.from(mContext).inflate(R.layout.choice_photo_dialog, null);
+			Button btnCamera = (Button)view.findViewById(R.id.take_from_camert);
+			btnCamera.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					mDialog.dismiss();
+					Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+					startActivityForResult(intent, REQUEST_TAKE_PHOTO);
+				}
+			});
+			Button btnGalley = (Button) view.findViewById(R.id.take_from_file);
+			btnGalley.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					mDialog.dismiss();
+					Intent intent = new Intent(Intent.ACTION_PICK);
+					intent.setType("image/*");
+					startActivityForResult(intent, REQUEST_FROM_FILE);
+				}
+			});
+			mDialog.setContentView(view);
+		}
+		mDialog.show();
 	}
 
 	private void initUserInfo() {
@@ -87,6 +134,32 @@ public class MyInfoFragment extends BaseFragment implements OnClickListener {
 				mDataFetcher.loadImg(APIS.BASE_URL + result.avatar, mHeadIcon, R.drawable.icon_01, R.drawable.icon_01);
 			}
 		}, mErrorListener);
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(resultCode == getActivity().RESULT_OK) {
+			Uri uri = BitmapUtil.getUriByData(data, getActivity().getContentResolver());
+			File file = BitmapUtil.getFileByUri(getActivity().getContentResolver(), uri);
+			Bitmap bmp = BitmapUtil.getResizeBitmap(file);
+			mHeadIcon.setImageBitmap(bmp);
+			new AsyncTask<File, Void, String>() {
+				@Override
+				protected String doInBackground(File... params) {
+					File uploadFile = params[0];
+					final String serverImgName = UploadUtil.getImgName();
+					try {
+						UploadUtil.post(uploadFile, APIS.UPLOAD,
+								serverImgName);
+						mAvatar = "/upload/" + serverImgName + UploadUtil.getExtensionName(uploadFile.getAbsolutePath());
+					} catch(Exception e) {
+						e.printStackTrace();
+					}
+					return null;
+				}
+			}.execute(file);
+		}
 	}
 
 	@Override
