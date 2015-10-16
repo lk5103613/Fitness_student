@@ -33,11 +33,6 @@ public class BarViewPager extends ViewPager {
 		return false;
 	}
 
-//	@Override
-//	public boolean onTouchEvent(MotionEvent ev) {
-//		return false;
-//	}
-
 	@Override
 	public void setCurrentItem(int item, boolean smoothScroll) {
 		super.setCurrentItem(item, smoothScroll);
